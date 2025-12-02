@@ -6,6 +6,11 @@ import os
 import json
 import logging
 import uuid
+from aws_xray_sdk.core import xray_recorder
+from aws_xray_sdk.core import patch_all
+
+# Automatically instrument all AWS SDK calls
+patch_all()
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
